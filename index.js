@@ -185,9 +185,19 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(array){
+  let avg = 0;
+  for(let i=0; i<array.length; i++) {
+    avg+=array[i].split(" ").length;
+  }
+  avg/=array.length;
+
+  return avg;
 }
+
+const rides = ["Steel Vengeance", "Millennium Force", "Maxx Force", "The Beast", "Maverick", "Top Thrill Dragster", "Gotham City Guantlet Escape From Arkham Asylum", "Hagrid's Magical Creatures Motorbike Adventure", "SpongeBob SquarePants Rock Bottom Plunge"];
+
+console.log(getAverageWordLength(rides));
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
