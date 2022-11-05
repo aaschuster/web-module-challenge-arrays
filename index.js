@@ -45,11 +45,13 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
+function copy(originalFlavors) {
 
-function copy(originalFlavors){
-  return originalFlavors;
+  let copyOfFlavors = [];
+  copyOfFlavors = originalFlavors;
+  return copyOfFlavors;
 }
-console.log(copy);
+let copyOfFlavors=copy(originalFlavors);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -63,13 +65,11 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(originalFlavors){
+function is31Flavors(copyOfFlavors){
   if(originalFlavors.length===31) {
     return true;
   } else return false;
  }
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -84,12 +84,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(originalFlavors, newFlavor){
-  originalFlavors.unshift(newFlavor);
-  return originalFlavors;
+function addFlavor(copyOfFlavors, newFlavor){
+  copyOfFlavors.unshift(newFlavor);
+  return copyOfFlavors;
  }
-
- console.log(addFlavor(originalFlavors, "Rainbow Sherebert"));
+copyOfFlavors = addFlavor(copyOfFlavors, "Rainbow Sherbert");
+ console.log(copyOfFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -103,11 +103,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(originalFlavors){
-  originalFlavors.pop();
-  return originalFlavors;
+function removeLastFlavor(copyOfFlavors){
+  copyOfFlavors.pop();
+  return copyOfFlavors;
 }
-console.log(removeLastFlavor(originalFlavors));
+console.log(removeLastFlavor(copyOfFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -121,8 +121,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(originalFlavors, index){
-  return originalFlavors[index];
+function getFlavorByIndex(copyOfFlavors, index){
+  return copyOfFlavors[index];
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -139,9 +139,9 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(originalFlavors, flavorName){
-    originalFlavors.splice(originalFlavors.indexOf(flavorName), 1);
-    return originalFlavors;
+function removeFlavorByName(copyOfFlavors, flavorName){
+    copyOfFlavors.splice(copyOfFlavors.indexOf(flavorName), 1);
+    return copyOfFlavors;
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -163,11 +163,15 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(copyOfFlavors, keyword){
+  const results = [];
+  for(let i = 0; i<copyOfFlavors.length; i++) {
+    if(copyOfFlavors[i].includes(keyword)===true) {
+      results.push(copyOfFlavors[i]);
+    }
+  }
+  return results;
 }
-
-
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
